@@ -3,10 +3,15 @@ language: en
 pipeline:
   - name: SingleStepLLMCommandGenerator
     llm:
-      model_name: gpt-4
+      model: gpt-4
 
 policies:
   - name: FlowPolicy
+  - name: EnterpriseSearchPolicy
+    vectore_store:
+      type: "faiss"
+      source: "./docs"
+#  - name: IntentlessPolicy
 #  - name: EnterpriseSearchPolicy
 #  - name: RulePolicy
 

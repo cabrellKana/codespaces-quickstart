@@ -1,0 +1,75 @@
+version: '3.9'
+
+services:
+  nginx:
+    container_name: nginx
+    image: nginx
+    volumes:
+      - ./nginx:/etc/nginx/conf.d/:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/ #:ro
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - rasa
+    networks:
+      - rasa_network
+    restart: always
+
+  rasa:
+    image: rasa/rasa
+    container_name: "rasa_server"
+    working_dir: /app
+    build: "./"
+    restart: always
+    volumes:
+      - ./actions:/app/actions
+      - ./data:/app/data
+      - ./:/app
+    environment:
+      - PYTHON_ENV=production
+      - SQLALCHEMY_SILENCE_UBER_WARNING=1
+      - SQLALCHEMY < 2.0
+      - RASA_TRACKER_STORE_TYPE=sql
+      - RASA_ENV=development
+
+    depends_on:
+      - postgres
+    ports:
+      - '5005:5005'
+      - '5055:5055'
+    #public: true
+    networks:
+      #- all
+      - rasa_network
+
+  postgres:
+    image: postgres:latest
+    container_name: postgresql_db
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: rasaChatbotPWD
+      POSTGRES_USER: rasa_chatbot
+      POSTGRES_DB: tracker_store_db
+      POSTGRES_HOST: postgres
+    volumes:
+      - db:/var/lib/postgresql/db_rasa
+      - ./app/dataset:/docker-entrypoint-initdb.d
+
+    ports:
+      - "5432:5432"
+    networks:
+      - rasa_network
+
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"
+  rasa_network:
+    driver: bridge
+
+volumes:
+  db:
+    driver: local

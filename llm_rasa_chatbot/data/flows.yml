@@ -1,8 +1,155 @@
+# flows:
+#   transfer_money:
+#     description: This flow lets users send money to friends and family.
+#     steps:
+#       - collect: recipient
+#       - collect: amount
+#         description: the number of US dollars to send
 flows:
-  transfer_money:
-    description: This flow lets users send money to friends and family.
+  login_issue:
+    description: Handles the issue of users being unable to log in.
     steps:
-      - collect: recipient
-      - collect: amount
-        description: the number of US dollars to send
-      - action: utter_transfer_complete
+      - action: utter_login_issue
+
+  order_issue:
+    description: Handles issues with orders when customers can no longer view their orders.
+    steps:
+      - action: utter_order_issue
+
+  voucher_issue:
+    description: Handles issues when customers' vouchers or promo codes no longer work.
+    steps:
+      - action: utter_voucher_issue
+
+  model_cars:
+    description: Answers questions about model cars.
+    steps:
+      - action: utter_model_cars
+
+  materials:
+    description: Answers questions about the materials of the models.
+    steps:
+      - action: utter_materials
+
+  collector_preferences:
+    description: Answers questions about the preferences of model collectors.
+    steps:
+      - action: utter_collector_preferences
+
+  scales:
+    description: Answers questions about the available scales.
+    steps:
+      - action: utter_scales
+
+  availability:
+    description: Answers questions regarding the availability of items.
+    steps:
+      - action: utter_availability
+
+  catalog_request:
+    description: Answers requests for catalogs.
+    steps:
+      - action: utter_catalog_request
+
+  order_shipping:
+    description: Answers questions about shipping dates or receiving orders.
+    steps:
+      - action: utter_order_shipping
+
+  shipping_countries:
+    description: Answers questions about the shipping countries covered by the company.
+    steps:
+      - action: utter_shipping_countries
+
+  shipping_provider:
+    description: Answers questions about shipping service providers.
+    steps:
+      - action: utter_shipping_provider
+
+  payment_methods:
+    description: Answers questions about available payment methods.
+    steps:
+      - action: utter_payment_methods
+
+  complaint:
+    description: Answers questions regarding complaints about items.
+    steps:
+      - action: utter_complaint
+
+  return_item:
+    description: Answers questions about returning items.
+    steps:
+      - action: utter_return_item
+
+  withdrawal:
+    description: Answers questions regarding the withdrawal of purchases.
+    steps:
+      - action: utter_withdrawal
+
+  thank_you:
+    description: Responds to expressions of thanks.
+    steps:
+      - action: utter_thank_you
+
+  request_human:
+    description: Guides the user to contact a human representative.
+    steps:
+      - action: utter_send_contact_form_link
+
+  shipping_costs:
+    description: Handles inquiries about shipping costs for a country.
+    steps:
+      - collect: country
+      - action: action_trigger_search #action_shipping_costs
+
+  request_tracking_number:
+    description: Answers inquiries about the tracking number.
+    steps:
+      - collect: order_number
+      - collect: order_last_name
+        description: the order number and order last name to retrieve the tracking number
+      - action: action_check_tracking_number
+      - action: utter_show_tracking_number
+      - action: reset_all_slots
+
+  request_voucher:
+    description: Processes inquiries for vouchers.
+    steps:
+      - collect: auftragsnummer
+      - action: action_request_voucher
+
+  stone_size_filter:
+    description: Filters stones by size.
+    steps:
+      - collect: stone_size
+      - action: action_stone_size_filter
+
+  handle_sensitive_data_request:
+    description: Handles requests for sensitive data and refuses to provide it.
+    steps:
+      - action: utter_unauthorized_data
+
+  handle_data_not_available_request:
+    description: Handles requests for unavailable data.
+    steps:
+      - action: utter_data_not_available
+
+  handle_unknown_topic_request:
+    description: Handles inquiries about unknown topics.
+    steps:
+      - action: utter_unknown_topic
+
+  handle_incorrect_information_request:
+    description: Handles requests for incorrect information.
+    steps:
+      - action: utter_incorrect_information_request
+
+  excessive_request:
+    description: Handles excessive requests for information.
+    steps:
+      - action: utter_excessive_request
+
+  confidential_information_request:
+    description: Handles requests for confidential information and refuses to provide it.
+    steps:
+      - action: utter_confidential_information
