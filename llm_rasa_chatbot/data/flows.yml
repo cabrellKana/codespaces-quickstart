@@ -6,6 +6,21 @@
 #       - collect: amount
 #         description: the number of US dollars to send
 flows:
+  bot_request: 
+    description: Handles when the user ask if you are a bot
+    steps:
+      - action: utter_bot_request
+
+  greet: 
+    description: Handles when the user greet you
+    steps:
+      - action: utter_greet
+
+  good_bye: 
+    description: Handles when the user tell you good bye
+    steps:
+      - action: utter_goodbye
+
   login_issue:
     description: Handles the issue of users being unable to log in.
     steps:

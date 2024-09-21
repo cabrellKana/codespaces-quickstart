@@ -54,11 +54,20 @@ responses:
   utter_ask_country:
     - text: "For which country do you need shipping costs?"
   
+  utter_greet:
+    - text: "Hello. How can i help you?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a nice day."
+
+  utter_bot_request:
+    - text: "I'm a bot powered by Rasa. How can I help you?"
+
   utter_login_issue:
     - text: "Due to our new system, resetting the password for previously existing customer accounts is required. Please use the 'I forgot my password' feature."
 
   utter_order_issue:
-    - text: "For technical reasons, we were unable to transfer the order data and wish lists to the new shop. We apologize for the inconvenience. For questions about your order, please use our <a href='https://www.modelcarworld.com/de/kontakt/' target='_blank'>contact form</a>."
+    - text: "For technical reasons, we were unable to transfer the order data and wish lists to the new shop. We apologize for the inconvenience. For questions about your order, please use our [contact form](https://www.modelcarworld.com/de/kontakt/)."
 
   utter_voucher_issue:
     - text: "For technical reasons, vouchers and promo codes have not yet been fully migrated, but this will follow soon. We appreciate your understanding!"
@@ -70,7 +79,7 @@ responses:
     - text: "Most models today are primarily made of metal (die-cast). Attachments like mirrors or the interior are made of plastic. Details such as door handles are either only suggested in shape, highlighted by a colored print, or installed as a separate component. The amount of detail does not directly correlate with the size of the model. Smaller models can have as many details as larger versions. However, the level of detail usually has a direct impact on the price."
 
   utter_collector_preferences:
-    - text: "Everyone has different areas of interest and preferences regarding model cars, making each collection as unique as the collector themselves. Whether it’s Formula 1 vehicles, Ferraris, SUVs, red station wagons, Japanese cars, fire trucks, classic cars from the 1920s, American police cars, or anything else one likes, buses, beer trucks, convertibles... The variety of themes is almost limitless. Many collectors choose a specific scale to ensure that all models in the collection match in size. However, there are also, for example, Alfa Romeo fans (or fans of any other brand) who want every vehicle from that company in their collection, regardless of scale."
+    - text: "Everyone has different areas of interest and preferences regarding model cars, making each collection as unique as the collector themselves. Whether it's Formula 1 vehicles, Ferraris, SUVs, red station wagons, Japanese cars, fire trucks, classic cars from the 1920s, American police cars, or anything else one likes, buses, beer trucks, convertibles... The variety of themes is almost limitless. Many collectors choose a specific scale to ensure that all models in the collection match in size. However, there are also, for example, Alfa Romeo fans (or fans of any other brand) who want every vehicle from that company in their collection, regardless of scale."
 
   utter_scales:
     - text: "Model vehicles are available in scales from 1:160 to 1:8. For example, the current S-Class from Mercedes, with a length of 5.04 meters, means in model scale: 
@@ -92,34 +101,34 @@ responses:
     - text: "Unfortunately, we cannot provide a delivery timeframe for individual items. We therefore recommend that you request to be notified via email as soon as the desired set is available again. Please use the designated button next to the desired items in our shop."
 
   utter_catalog_request:
-    - text: "<a href='https://www.modelcarworld.com/de/kontakt/' target='_blank'>Here</a> you can request the current catalog by mail or download it directly as a PDF file."
+    - text: "[Here](https://www.modelcarworld.com/de/kontakt/) you can request the current catalog by mail or download it directly as a PDF file."
 
   utter_order_shipping:
     - text: "As soon as the payment for your order has been received, we will do our utmost to ship your order as quickly as possible. Typically, this can take 1 to 3 days until we hand over your package to DHL. Currently, DHL states a shipping time of 2 to 3 days within Germany. For shipments outside Germany, you can find more information from DHL. Please note that we cannot guarantee shipping times."
 
   utter_shipping_countries:
-    - text: "<a href='https://www.modelcarworld.com/de/kontakt/' target='_blank'>Here</a> you can find the list of all shipping countries including their respective shipping costs."
+    - text: "[Here](https://www.modelcarworld.com/de/rechtliches/versand-und-zahlung/) you can find the list of all shipping countries including their respective shipping costs."
 
   utter_shipping_provider:
     - text: "We ship all orders with the shipping service provider DHL. Additionally, you have the option to have your package delivered to a DHL parcel station."
 
   utter_payment_methods:
-    - text: "All information about accepted payment methods can be found <a href='https://www.modelcarworld.com/de/kontakt/' target='_blank'>here</a>."
+    - text: "All information about accepted payment methods can be found [here](https://www.modelcarworld.com/de/rechtliches/versand-und-zahlung/)."
 
   utter_complaint:
-    - text: "To report a misdelivery, you can use this <a href='https://www.modelcarworld.com/de/kontakt/' target='_blank'>form</a>. Please let us know which model you originally ordered and which one was actually delivered. Furthermore, we need pictures of all delivered items. Upon receiving this information, we will process your case as quickly as possible."
+    - text: "To report a misdelivery, you can use this [form](https://www.modelcarworld.com/de/kontakt/). Please let us know which model you originally ordered and which one was actually delivered. Furthermore, we need pictures of all delivered items. Upon receiving this information, we will process your case as quickly as possible."
 
   utter_return_item:
-    - text: "You are welcome to exercise your right of withdrawal. You can find our cancellation policy <a href='https://www.modelcarworld.com/de/widerruf/' target='_blank'>here</a>."
+    - text: "You are welcome to exercise your right of withdrawal. You can find our cancellation policy [here](https://www.modelcarworld.com/de/widerruf/)."
 
   utter_withdrawal:
-    - text: "You are welcome to exercise your right of withdrawal. Our withdrawal conditions can be found <a href='https://www.modelcarworld.com/de/widerruf/' target='_blank'>here</a>."
+    - text: "You are welcome to exercise your right of withdrawal. Our withdrawal conditions can be found [here](https://www.modelcarworld.com/de/widerruf/)."
 
   utter_thank_you:
     - text: "Thank you very much for your message!"
 
   utter_send_contact_form_link:
-    - text: "Here is the link to our <a href='https://www.modelcarworld.com/de/kontakt/' target='_blank'>contact form</a>. "
+    - text: "Here is the link to our [contact form](https://www.modelcarworld.com/de/kontakt/). "
 
   utter_unauthorized_data:
     - text: "Unfortunately, I cannot provide sensitive data."

@@ -55,7 +55,7 @@ class TokenManager:
         return self.token
 
 token_manager = TokenManager(
-    
+
 )
 token_manager.start_token_refresh()
 
@@ -105,7 +105,7 @@ class ActionCheckTrackingNumber(Action):
 
         try:
             response = requests.get(f"{token_manager.api_url}/api/order?associations[deliveries][]", headers=headers, params=params)
-
+            
             if response.status_code == 200:
                 order_data = response.json()
                 order_data = order_data['data'][0]

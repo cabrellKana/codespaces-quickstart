@@ -19,7 +19,6 @@ RUN pip install rasa-sdk pymysql SQLAlchemy==1.4.52 html2text
 RUN apt-get update && apt-get --assume-yes --no-install-recommends install build-essential curl git jq libgomp1 vim
 
 
-
 COPY ./supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
 COPY ./dataset/init.sql /docker-entrypoint-initdb.d/init.sql
