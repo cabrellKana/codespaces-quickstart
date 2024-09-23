@@ -137,7 +137,7 @@ responses:
     - text: "I’m sorry, but the requested data is not available."
 
   utter_unknown_topic:
-    - text: "I cannot help you with that. Please ask a different question."
+    - text: "Sorry but I cannot help you with that. "
 
   utter_incorrect_information_request:
     - text: "Please provide the correct information."
@@ -146,7 +146,7 @@ responses:
     - text: "I’m sorry, but I cannot respond to so many requests at once."
 
   utter_confidential_information:
-    - text: "I cannot provide confidential information."
+    - text: "Sorry, I cannot provide confidential information."
   
   utter_show_tracking_number:
     - text: "Your shippingscode is {tracking_number}. "

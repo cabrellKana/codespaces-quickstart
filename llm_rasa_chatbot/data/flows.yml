@@ -116,6 +116,7 @@ flows:
     steps:
       - collect: country
       - action: action_trigger_search #action_shipping_costs
+      - action: reset_all_slots
 
   request_tracking_number:
     description: Answers inquiries about the tracking number.
@@ -138,6 +139,7 @@ flows:
     steps:
       - collect: stone_size
       - action: action_stone_size_filter
+      - action: reset_all_slots
 
   handle_sensitive_data_request:
     description: Handles requests for sensitive data and refuses to provide it.
@@ -168,3 +170,8 @@ flows:
     description: Handles requests for confidential information and refuses to provide it.
     steps:
       - action: utter_confidential_information
+
+  enterprise_question:
+    description: Handles requests on the name or definition of the enterprise or the adress of the enterprise
+    steps:
+      - action: action_trigger_search

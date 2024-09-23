@@ -49,10 +49,10 @@ services:
     container_name: postgresql_db
     restart: always
     environment:
-      POSTGRES_PASSWORD: 
-      POSTGRES_USER: 
-      POSTGRES_DB: 
-      POSTGRES_HOST: 
+      POSTGRES_PASSWORD: rasaChatbotPWD
+      POSTGRES_USER: rasa_chatbot
+      POSTGRES_DB: tracker_store_db
+      POSTGRES_HOST: postgres
     volumes:
       - db:/var/lib/postgresql/db_rasa
       - ./app/dataset:/docker-entrypoint-initdb.d
